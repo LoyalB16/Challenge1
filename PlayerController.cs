@@ -54,9 +54,9 @@ public class PlayerController : MonoBehaviour
         else if (other.gameObject.CompareTag("Enemy"))
         {
             other.gameObject.SetActive(false);
-            lives = lives - -1;
+            lives = lives - 1;
             SetCountText();
-            livesText.text = "Lives: " + count.ToString();
+            livesText.text = "Lives: " + lives.ToString();
         }
     }
     void SetCountText()
@@ -69,6 +69,7 @@ public class PlayerController : MonoBehaviour
         livesText.text = "Lives: " + lives.ToString();
         if (lives <= 0)
         {
+            Destroy(gameObject);
             winText.text = "You Lose!";
         }
         countText.text = "Count: " + count.ToString();
