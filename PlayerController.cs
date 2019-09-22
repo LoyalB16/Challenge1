@@ -28,7 +28,7 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    private void SetlivesText() => SetlivesText();
+    // private void SetlivesText() => SetlivesText();
 
     void FixedUpdate()
     {
@@ -72,7 +72,6 @@ public class PlayerController : MonoBehaviour
             Destroy(gameObject);
             winText.text = "You Lose!";
         }
-        countText.text = "Count: " + count.ToString();
         if (count >= 21)
         {
             winText.text = "You win! Game created by Byron Bess!";
