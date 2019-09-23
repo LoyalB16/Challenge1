@@ -74,8 +74,8 @@ public class PlayerController : MonoBehaviour
     void SetlivesText()
         {
             livesText.text = "Lives: " + lives.ToString();
-            if (lives <= 0)
-            {
+            if (lives == 0)
+        {
                 Destroy(gameObject);
                 winText.text = "You Lose!";
             }
