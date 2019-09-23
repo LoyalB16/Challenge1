@@ -55,8 +55,8 @@ public class PlayerController : MonoBehaviour
         {
             other.gameObject.SetActive(false);
             lives = lives - 1;
+            SetCountText();
             SetlivesText();
-            livesText.text = "Lives: " + lives.ToString();
         }
     }
     void SetCountText()
@@ -66,24 +66,18 @@ public class PlayerController : MonoBehaviour
         {
             transform.position = new Vector2(50.0f, 50.0f);
         }
-        livesText.text = "Lives: " + lives.ToString();
-        if (lives <= 0)
-        {
-            Destroy(gameObject);
-            winText.text = "You Lose!";
-        }
         if (count >= 21)
         {
             winText.text = "You win! Game created by Byron Bess!";
-            void SetlivesText()
-            {
-                livesText.text = "Lives: " + lives.ToString();
-                if (lives <= 0)
-                {
-                    Destroy(gameObject);
-                    winText.text = "You Lose!";
-                }
-            }
         }
     }
+    void SetlivesText()
+        {
+            livesText.text = "Lives: " + lives.ToString();
+            if (lives <= 0)
+            {
+                Destroy(gameObject);
+                winText.text = "You Lose!";
+            }
+        }
 }
